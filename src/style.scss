@@ -156,7 +156,7 @@ body {
   animation-name: example;
   animation-duration: 2s;
   @include mobile {
-    margin: 0;
+    margin: 10px;
     overflow-y: auto;
     
   }
@@ -177,7 +177,7 @@ body {
     @include mobile {
       border: none;
       box-shadow: none;
-      border-radius: 0px;
+      border-radius: 10px;
       height: 90%;
       width: 100%;
       overflow-y: auto;
@@ -198,7 +198,7 @@ body {
     border-radius: 10px;
 
     @include mobile {
-      border-radius: 0px;
+      border-radius: 10px;
     }
 
     button {
