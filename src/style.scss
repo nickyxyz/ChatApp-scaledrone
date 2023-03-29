@@ -157,8 +157,12 @@ body {
   animation-duration: 2s;
   overflow-y: auto;
   @include mobile {
-    margin: 10px;
-    overflow-y: auto;
+    text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
     
   }
 
@@ -178,10 +182,10 @@ body {
     @include mobile {
       box-shadow: none;
       border-radius: 10px;
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
       overflow-y: auto;
-      margin-top: 70px;
+      
     }
   }
 }
