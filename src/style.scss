@@ -176,7 +176,6 @@ body {
     }
 
     @include mobile {
-      border: none;
       box-shadow: none;
       border-radius: 10px;
       height: 90%;
@@ -234,7 +233,7 @@ body {
       }
 
       @include mobile {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -302,6 +301,10 @@ body {
         strong {
           font-size: 16px;
           font-weight: bold;
+
+          @include mobile {
+            font-size: 16px;
+          }
         }
       }
 
@@ -310,7 +313,12 @@ body {
         border-radius: 10px 0 10px 10px;
         color: white;
         margin-top: -2px;
+
+        @include mobile {
+          font-size: 14px;
+        }
       }
+
     }
   }
 }
