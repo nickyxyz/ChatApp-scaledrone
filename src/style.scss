@@ -157,6 +157,7 @@ body {
   animation-duration: 2s;
   @include mobile {
     margin: 0;
+    
   }
 
   .container {
@@ -178,6 +179,7 @@ body {
       border-radius: 0px;
       height: 80vh;
       width: 100%;
+      overflow: scroll;
     }
   }
 }
