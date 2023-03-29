@@ -9,9 +9,9 @@ function App() {
   const [user, setUser] = useState(null);
 
   return (
-      <div>
-        {user ? <Home user={user} setUser={setUser} /> : <Login setUser={setUser} />}
-      </div>
+    <div>
+      {user ? <Home user={user} setUser={setUser} /> : <Login setUser={setUser} />}
+    </div>
   );
 }
 

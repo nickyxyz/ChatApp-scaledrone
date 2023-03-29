@@ -1,13 +1,13 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import { AiOutlineSend } from 'react-icons/ai'
 
 export default function Input({ onSendMessage }) {
-  
+
 
   const [message, setMessage] = useState('');
 
   function onChange(event) {
-   setMessage(event.target.value);
+    setMessage(event.target.value);
   }
 
   function onSubmit(event) {
@@ -29,7 +29,7 @@ export default function Input({ onSendMessage }) {
           placeholder="Enter your message..."
           autoFocus={true}
         />
-        <button className="msg-form__btn"><AiOutlineSend style={{fontSize: '30px', color: 'green'}}/></button>
+        <button className="msg-form__btn"><AiOutlineSend style={{ fontSize: '30px', color: 'green' }} /></button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Message = ({message}) => {
+const Message = ({ message }) => {
 
   const data = message.data || null;
 

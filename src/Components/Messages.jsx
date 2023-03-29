@@ -5,10 +5,10 @@ const Messages = ({ messages }) => {
   return (
     <div className='messages'>
       {messages.map(message => (
-        <Message key={message.id} message={message}  />
+        <Message key={message.id} message={message} />
       ))}
     </div>
- )
+  )
 }
 
 export default Messages

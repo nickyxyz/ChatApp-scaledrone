@@ -21,16 +21,16 @@ const Home = ({ user, setUser }) => {
     <div className="container">
       {loading ? (
         <div className="loader-container">
-      	  <div className="spinner"></div>
+          <div className="spinner"></div>
         </div>
       ) : (
-    <MessagesContext.Provider value={[messages, setMessages]}>
-    <div className='home'>
-        <div className="container">
-            <Chat user={user} setUser={setUser}  />
-        </div>
-    </div>
-    </MessagesContext.Provider>
+        <MessagesContext.Provider value={[messages, setMessages]}>
+          <div className='home'>
+            <div className="container">
+              <Chat user={user} setUser={setUser} />
+            </div>
+          </div>
+        </MessagesContext.Provider>
       )}
     </div>
   )

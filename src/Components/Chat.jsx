@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import  Messages from './Messages'
+import Messages from './Messages'
 import Input from './Input'
 import { MessagesContext } from '../pages/Home';
 import { SlLogout } from 'react-icons/sl'
@@ -7,8 +7,8 @@ import { SlLogout } from 'react-icons/sl'
 const CHANNEL_ID = "vnc4ZvZOQv5i9eca";
 
 const Chat = ({ user, setUser }) => {
-  
-  const [ messages, setMessages ] = useContext(MessagesContext);
+
+  const [messages, setMessages] = useContext(MessagesContext);
 
   const hour = new Date().getHours();
   const welcomeTypes = ["Good Morning!", "Good Afternoon!", "Good Evening!"];
@@ -67,11 +67,11 @@ const Chat = ({ user, setUser }) => {
     <div className='chat'>
       <div className="chatInfo">
         <div>
-          <button onClick={handleLogout}><SlLogout className='logout' style={{fontSize: '20px'}}/></button>
+          <button onClick={handleLogout}><SlLogout className='logout' style={{ fontSize: '20px' }} /></button>
         </div>
         <div>
           <span>{welcomeText} {user.avatar} {user.username}</span>
-          </div>
+        </div>
       </div>
       <Messages messages={messages || []} />
       <Input onSendMessage={handleSendMessage} />
