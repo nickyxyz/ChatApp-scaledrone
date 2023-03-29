@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import '../'
+import { AiOutlineSend } from 'react-icons/ai'
 
 export default function Input({ onSendMessage }) {
   
@@ -29,7 +29,7 @@ export default function Input({ onSendMessage }) {
           placeholder="Enter your message..."
           autoFocus={true}
         />
-        <button className="msg-form__btn">Send</button>
+        <button className="msg-form__btn"><AiOutlineSend style={{fontSize: '30px', color: 'green'}}/></button>
       </form>
     </div>
   );
