@@ -155,6 +155,7 @@ body {
   justify-content: center;
   animation-name: example;
   animation-duration: 2s;
+  overflow-y: auto;
   @include mobile {
     margin: 10px;
     overflow-y: auto;
@@ -168,7 +169,7 @@ body {
     width: 65%;
     height: 80%;
     display: flex;
-    overflow: hidden;
+    overflow-y: auto;
 
     @include tablet {
       width: 90%;
