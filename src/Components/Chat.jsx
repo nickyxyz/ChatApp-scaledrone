@@ -3,6 +3,7 @@ import Messages from './Messages'
 import Input from './Input'
 import { MessagesContext } from '../pages/Home';
 import { SlLogout } from 'react-icons/sl'
+import { welcomeText } from '../utilities/weather';
 
 const CHANNEL_ID = "vnc4ZvZOQv5i9eca";
 
@@ -10,21 +11,9 @@ const Chat = ({ user, setUser }) => {
 
   const [messages, setMessages] = useContext(MessagesContext);
 
-  const hour = new Date().getHours();
-  const welcomeTypes = ["Good Morning!", "Good Afternoon!", "Good Evening!"];
-  let welcomeText = "";
-  if (hour < 12) {
-    welcomeText = welcomeTypes[0];
-  } else if (hour < 18) {
-    welcomeText = welcomeTypes[1];
-  } else {
-    welcomeText = welcomeTypes[2];
-  }
-
   const handleLogout = (event) => {
     setUser(null);
   }
-
 
   let drone = new window.Scaledrone(CHANNEL_ID, {
     username: user.username,

@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { AiOutlineSend } from 'react-icons/ai'
 
 export default function Input({ onSendMessage }) {
-
-
   const [message, setMessage] = useState('');
 
   function onChange(event) {

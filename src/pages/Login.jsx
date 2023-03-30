@@ -5,6 +5,7 @@ const avatars = ['😄', '😊', '😎', '🙄', '👻', '🤠', '😋', '🥰']
 const Login = ({ setUser }) => {
   const [username, setUsername] = useState('');
   const [avatar, setAvatar] = useState(avatars[0]);
+  
   const selectedAvatar = useRef(null);
 
   const handleUsernameChange = (event) => {
