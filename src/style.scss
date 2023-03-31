@@ -24,24 +24,32 @@ html {
 body {
   background-color: #eceaec;
   overflow: hidden;
+  background-image: url(./assets/img/darktemplate.avif);
+  background-position: center;
+  background-size: cover;
+
 }
+
+
 
 .loader-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  background: #eceaec;
   z-index: 1;
+  background-image: url(./assets/img/darktemplate.avif);
+  background-position: center;
+  background-size: cover;
 }
 
 .spinner {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: rgb(110, 155, 110) transparent #d486c7 transparent;
+  border-color: rgb(28, 225, 28) transparent #b3b8b9 transparent;
   border-radius: 50%;
   animation: spin-anim 1.2s linear infinite;
 }
@@ -66,7 +74,7 @@ body {
   }
 
   .formWrapper {
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px 0px rgba(83, 160, 120, 0.3);
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
     padding: 20px 60px;
     border-radius: 10px;
@@ -74,6 +82,12 @@ body {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    background-color: #07240677;
+    transition: 0.5s;
+
+    &:hover{
+      background-color: #072406a0;
+    }
 
     @include mobile {
       margin: 0;
@@ -83,13 +97,14 @@ body {
     }
 
     .logo {
-      color: #07350e;
+      color: #30863c;
       font-weight: bold;
       font-size: 24px;
+
     }
 
     .title {
-      color: #072406;
+      color: #2383209b;
       font-size: 15px;
     }
     form {
@@ -133,6 +148,22 @@ body {
         font-weight: bold;
         border: none;
         cursor: pointer;
+        border-radius: 10px;
+        opacity:0.7;
+        transition: 0.5s;
+        color: white;
+        &:hover {
+          opacity:1;
+        
+        }
+        .enterChat {
+          
+        
+          @include mobile {
+            width: 70%;
+            margin: 0 auto;
+          }
+        }
       }
     }
   }
@@ -140,21 +171,48 @@ body {
 
 @keyframes example {
   0% {
-    transform: scale(0);
+    width: 20px;
+    height: 20px;
+  }
+  25% {
+    width: 40px;
+    height: 40px;
   }
   50% {
-    transform: scale(1);
+    width: 60px;
+    height: 60px;
+  }
+  75% {
+    width: 100px
+  }
+  
+}
+
+@keyframes noText {
+  0% {
+    visibility: hidden;
+  }
+
+  30% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
   }
 }
 
 .home {
-  background-color: #eceaec;
+  background-image: url(./assets/img/darktemplate.avif);
+  background-position: center;
+  background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation-name: example;
-  animation-duration: 2s;
+  
   overflow-y: auto;
   @include mobile {
     text-align: center;
@@ -170,10 +228,12 @@ body {
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
     border-radius: 10px;
-    width: 65%;
+    width: 50%;
     height: 80%;
     display: flex;
     overflow-y: auto;
+    animation-name: example;
+  animation-duration: 3s;
 
     @include tablet {
       width: 90%;
@@ -203,7 +263,7 @@ body {
 
     @include mobile {
       border-radius: 10px;
-      background-color: #eceaec;
+      background-color: rgba(50, 199, 50, 0.603);
       border: none;
       box-shadow: none;
     }
@@ -218,22 +278,30 @@ body {
       text-align: center;
       font-weight: bold;
       cursor: pointer;
-      transition: 1s;
+      transition: 0.5s;
 
       &:hover {
-        background-color: #d486c7;
+        background-color: rgba(255, 0, 0, 0.408);
+
+        @include mobile {
+          background-color:currentColor;
+        }
       }
 
       .logout {
         width: 20px;
         padding-right: 5px;
         padding-top: 3px;
+        animation-name: noText;
+      animation-duration: 5s;
       }
     }
 
     span {
       font-size: 24px;
       color: rgb(70, 69, 69);
+      animation-name: noText;
+      animation-duration: 5s;
 
       @include tablet {
         font-size: 20px;
@@ -241,11 +309,12 @@ body {
 
       @include mobile {
         font-size: 18px;
+        color: rgba(245, 245, 245, 0.737);
       }
     }
   }
   .messages {
-    background-color: transparent;
+    background-color: rgba(8, 67, 8, 0.167);
     padding: 10px;
     height: calc(100% - 160px);
     overflow-x: hidden;
@@ -265,11 +334,11 @@ body {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 
       &:hover {
-        background-color: #d486c7;
+        background-color: rgba(0, 255, 136, 0.419);
+        @include mobile {
+          background-color:currentColor;
+        }
       }
-    }
-
-    @include mobile {
     }
   }
 
@@ -277,6 +346,7 @@ body {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
+
 
     .messageInfo {
       display: flex;
@@ -292,7 +362,7 @@ body {
       gap: 10px;
 
       p {
-        background-color: white;
+        background-color: black;
         padding: 10px 20px;
         border-radius: 0px 10px 10px 10px;
         max-width: max-content;
@@ -306,8 +376,9 @@ body {
         align-items: flex-end;
 
         strong {
-          font-size: 16px;
+          font-size: 18px;
           font-weight: bold;
+          color: white;
 
           @include mobile {
             font-size: 16px;
@@ -318,7 +389,7 @@ body {
       p {
         background-color: rgb(110, 155, 110);
         border-radius: 10px 0 10px 10px;
-        color: white;
+        color: blackwhite;
         margin-top: -2px;
 
         @include mobile {
@@ -337,6 +408,7 @@ body {
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
+  
 
   @include mobile {
     height: 40px;
@@ -348,6 +420,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation-name: noText;
+      animation-duration: 5s;
 
   input {
     width: 100%;
@@ -359,6 +433,7 @@ body {
 
     &::placeholder {
       color: lightgray;
+      
     }
   }
 
@@ -374,8 +449,12 @@ body {
     cursor: pointer;
 
     &:hover {
-      background-color: #d486c7;
+      background-color: rgba(0, 128, 0, 0.237);
+      @include mobile {
+        background-color:currentColor;
+      }
     }
+    
   }
 }
 
@@ -395,20 +474,14 @@ body {
       padding: 8px;
       display: inline-block;
       cursor: pointer;
+      transition: 0.5s;
     }
 
     .avatar:hover {
-      border-color: rgb(226, 134, 150);
-      background-color: rgb(226, 134, 150);
+      border-color: rgb(64, 187, 128);
+      background-color: rgba(55, 120, 70, 0.502);
     }
   }
 }
 
-.enterChat {
-  border-radius: 10px;
 
-  @include mobile {
-    width: 70%;
-    margin: 0 auto;
-  }
-}

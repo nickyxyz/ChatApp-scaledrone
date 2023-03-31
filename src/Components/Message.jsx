@@ -7,7 +7,7 @@ const Message = ({ message }) => {
   return data ? (
     <div className='message owner'>
       <div className="messageContent">
-        <strong>{data.avatar} {data.username}</strong>
+        <strong >{data.avatar} {data.username}</strong>
         <p>{data.message}</p>
       </div>
     </div>

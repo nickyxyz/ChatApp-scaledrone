@@ -27,7 +27,7 @@ const Login = ({ setUser }) => {
     if (selected) {
       selected.style.backgroundColor = "";
     }
-    event.target.style.backgroundColor = "rgb(226, 134, 150)";
+    event.target.style.backgroundColor = "rgba(55, 120, 70, 0.7)";
     selectedAvatar.current = event.target;
     setAvatar(event.target.textContent);
   }
@@ -42,7 +42,9 @@ const Login = ({ setUser }) => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
+        <div className="wrapper">
         <span className="logo">Chat App</span>
+        </div>
         <span className="title">Login</span>
         <form onSubmit={handleSubmit}>
           <input className="inputUsername" type="text" placeholder="username" value={username} onChange={handleUsernameChange} />
