@@ -4,7 +4,7 @@ import useAutoScroll from '../Hooks/scroll-chat';
 
 const Messages = ({ messages }) => {
   const messagesRef = useRef(null);
-  useAutoScroll(messagesRef);
+  useAutoScroll(messagesRef, messages);
 
 
   return (

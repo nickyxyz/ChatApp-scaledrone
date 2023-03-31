@@ -1,15 +1,32 @@
 import { useEffect } from 'react';
 
-const useAutoScroll = (messagesRef) => {
+const useAutoScroll = (messagesRef, messages) => {
     useEffect(() => {
-        const interval = setInterval(() => {
+        const scrollToEnd = () => {
             if (messagesRef.current) {
                 messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
             }
-        }, 1);
+        };
+        scrollToEnd();
+    }, [messagesRef, messages]);
 
-        return () => clearInterval(interval);
-    }, [messagesRef]);
+    useEffect(() => {
+        const scrollToEnd = () => {
+            if (messagesRef.current) {
+                messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+            }
+        };
+
+        const handleNewMessage = () => {
+            scrollToEnd();
+        };
+
+        const messagesList = messagesRef.current;
+        messagesList.addEventListener('DOMNodeInserted', handleNewMessage);
+        return () => {
+            messagesList.removeEventListener('DOMNodeInserted', handleNewMessage);
+        };
+    }, [messagesRef, messages]);
 };
 
 export default useAutoScroll;
